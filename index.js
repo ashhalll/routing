@@ -24,15 +24,13 @@ app.get("/", (req, res) => {
   });
 
 app.post("/check", (req, res) => {
-    if (userIsAuthorised) {
+    if (isUserAuthorised) {
       res.sendFile(__dirname + "/public/secret.html");
     } else {
       res.sendFile(__dirname + "/public/index.html");
       //Alternatively res.redirect("/");
     }
   });
-
-
 
 app.listen(3000, () =>{
     console.log("Server running on Port 3000!");
